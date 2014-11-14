@@ -1,4 +1,4 @@
-sock = new SockJS('http://localhost:5000/broadcast')
+sock = new SockJS($("#messages").data('node-url'))
 sock.onmessage = (e) ->
   $li = $("<li />").text(e.data)
   $li.appendTo $("#messages")
