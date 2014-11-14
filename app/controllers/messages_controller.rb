@@ -3,8 +3,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.new(params[:message])
-    message.save
-    render json: message
+    @message = Message.new(params[:message])
+    @message.save
   end
 end
