@@ -1,22 +1,23 @@
 $ ->
-  container = $("#messages")
+  $container = $("#messages")
 
   append = (text) ->
     $li = $("<li />").text(text)
-    $li.appendTo container
+    $container.append $li
 
   wait = 1
 
   connect = ->
-    sock = new SockJS(container.data('node-url'))
+    append "connecting..."
+    sock = new SockJS($container.data('node-url'))
     sock.onopen = (e) ->
       wait = 1
-      append "connected"
+      append "...connected"
     sock.onmessage = (e) ->
       append e.data
     sock.onclose = (e) ->
       append "disconnected"
-      append "trying to reconnect in #{wait} seconds..."
+      append "trying to reconnect in #{wait} seconds"
       setTimeout connect, wait * 1000
       wait *= 2
 
