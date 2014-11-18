@@ -18,6 +18,6 @@ $ ->
       append "disconnected"
       append "trying to reconnect in #{wait} seconds..."
       setTimeout connect, wait * 1000
-      wait = wait ** 2
+      wait *= 2
 
   connect()
