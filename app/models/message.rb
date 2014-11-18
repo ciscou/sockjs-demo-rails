@@ -8,7 +8,7 @@ class Message
   def save
     return false unless valid?
 
-    $redis.rpush 'sockjs-demo:messages', body
+    $redis.publish 'sockjs-demo:messages', body
     true
   end
 end
