@@ -2,8 +2,9 @@ $ ->
   $container = $("#messages")
 
   append = (text) ->
-    $li = $("<li />").text(text)
+    $li = $("<li />").addClass('list-group-item').text(text)
     $container.append $li
+    $("html, body").animate { scrollTop: $(document).height() }, 500, 'swing'
 
   wait = 1
 

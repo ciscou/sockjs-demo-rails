@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<nav id="new-message-container">
+  <div class="container">
+    <%= form_for Message.new, remote: true do |f| %>
+      <div class="input-group">
+        <%= f.text_field :body, class: 'form-control input-lg' %>
+        <span class="input-group-btn">
+          <%= f.submit "Send", class: 'btn btn-lg btn-block btn-success' %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</nav>
 
 </body>
 </html>

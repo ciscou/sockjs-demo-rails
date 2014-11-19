@@ -1,9 +1,4 @@
 <h1>Messages</h1>
 
-<ol id="messages" data-node-url="<%= node_url %>">
-</ol>
-
-<%= form_for Message.new, remote: true do |f| %>
-  <%= f.text_field :body %>
-  <%= f.submit "Send" %>
-<% end %>
+<ul id="messages" class="list-group" data-node-url="<%= node_url %>">
+</ul>
