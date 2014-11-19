@@ -1,3 +1,4 @@
 <% if @message.errors.empty? %>
-  $('#new_message')[0].reset()
+  $('#new_message')[0].reset();
+  $('#new_message #message_body').focus();
 <% end %>
