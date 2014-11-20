@@ -21,5 +21,6 @@ $ ->
       append "trying to reconnect in #{wait} seconds"
       setTimeout connect, wait * 1000
       wait *= 2
+    window.sock = sock
 
   connect()
